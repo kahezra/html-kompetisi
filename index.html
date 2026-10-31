@@ -3,43 +3,196 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
   <title>test</title>
 
   <style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    header {
+        width: 100%;
+        height: 40vh;
+        background: black;
+    }
+
+    /* header .news-images {
+        width: 100%;
+        height: 35vh;
+    } */
+
+    header  .news-images .news-image {
+        display: none;
+        position: relative;
+        visibility: hidden;
+    }
+
+    header .news-images .news-image[value="1"] 
+    {
+        display: block;
+        visibility: visible;
+
+        transition: all .5s ease-in-out;
+    }
+    header .news-images .news-image[value="1"] img {
+        width: 100%;
+        height: 35vh;
+        opacity: 0.5;
+    }
+
+    header .news-images .news-image[value="1"] h3 {
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+
+        color: white;
+    }
+
+    header .scroll {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: white;
+    }
+
     
   </style>
 
 </head>
 <body>
-  <header class="header">
+
+    <script type="text/javascript">
+        const Operator = {
+            ADD: 0, SUB: 1
+        }
+    </script>
+
+  <header>
     <section class="news-images">
-      <div class="image1" visible="true">
-        <img src="assets/Menu Utama.jpeg" id="img">
+      <div class="news-image" value="1">
+        <img src="https://fastly.picsum.photos/id/314/200/200.jpg?hmac=bCAc2iO5ovLPrvwDQV31aBPS13QTyv33ut2H2wY4QXU" id="img">
         <h3>Text</h3>
       </div>
-      <div class="image2" visible="false">
-        <img src="assets/Menu Utama.jpeg" id="img">
-        <h3>Text</h3>
+      <div class="news-image" value="0">
+        <img src="https://fastly.picsum.photos/id/314/200/200.jpg?hmac=bCAc2iO5ovLPrvwDQV31aBPS13QTyv33ut2H2wY4QXU" id="img">
+        <h3>Kentut saya bau!</h3>
       </div>
-      <div class="image3" visible="false">
-        <img src="assets/Menu Utama.jpeg" id="img">
-        <h3></h3>
-      </div>
-      <div class="image4" visible="false">
-        <img src="assets/Menu Utama.jpeg" id="img">
-        <h3>Text</h3>
+      <div class="news-image" value="0">
+        <img src="https://fastly.picsum.photos/id/314/200/200.jpg?hmac=bCAc2iO5ovLPrvwDQV31aBPS13QTyv33ut2H2wY4QXU" id="img">
+        <h3>Kentut anda lebih bau dari saya!</h3>
       </div>
     </section>
+
+    <div class="scroll">
+        <button class="fa-duotone fa-solid fa-arrow-left" onclick="imageIndex(Operator.SUB)"></button>
+        <i class="fa-regular fa-circle"></i>
+        <i class="fa-regular fa-circle"></i>
+        <i class="fa-regular fa-circle"></i>
+        <button class="fa-duotone fa-solid fa-arrow-right" onclick="imageIndex(Operator.ADD)"></button>
+    </div>
+
+    
+    <nav class="nav">
+        <a class="fa-regular fa-house" id="home-logo" href="#"></a>
+        <div class="links">
+            <a href="#">Home</a>
+            <form action="#" method="get">
+                <input type="text" placeholder="Search">
+                <button>Search</button>     
+            </form>
+        </div>
+    </nav>
+
   </header>
 
-  <main class="main">
+  <main>
+    <section class="news-images">
+        <div class="news-image">
+            <img src="https://fastly.picsum.photos/id/314/200/200.jpg?hmac=bCAc2iO5ovLPrvwDQV31aBPS13QTyv33ut2H2wY4QXU" alt="">
+            <h1>Breaking News!</h1>
+        </div>
+        <div class="news-image">
+            <img src="https://fastly.picsum.photos/id/314/200/200.jpg?hmac=bCAc2iO5ovLPrvwDQV31aBPS13QTyv33ut2H2wY4QXU" alt="">
+            <h1>Breaking News!</h1>
+        </div>
 
+    </section>
+    <article class="text">
+        <h1>Sekolah Terpadu Nasional membantu anak-anak Indonesia bermimpi besar</h1>
+        <p>
+            Ada yang ingin mengenakan jas dokter, menjadi peneliti, mengabdi kepada negara sebagai diplomat, mengembangkan bakat menyanyi, atau berprestasi di bidang olahraga.
+
+            Mimpi-mimpi ini memiliki bentuk yang berbeda, tetapi semuanya memiliki satu kebutuhan penting: kesempatan.
+            ...
+        </p>
+    </article>
+    <aside class="right">
+        <section class="right-news-top">
+            <div class="news-image">
+                <img src="https://fastly.picsum.photos/id/314/200/200.jpg?hmac=bCAc2iO5ovLPrvwDQV31aBPS13QTyv33ut2H2wY4QXU" alt="">
+                <h1>Breaking News!</h1>
+            </div>
+        </section>
+        <section class="vote-section">
+            <div class="vote-text">
+                <h1>Vote</h1>
+            </div>
+            <div class="votes">
+                <div class="vote">
+                    <div class="bar-grey">
+                        <span class="percentage">0</span>
+                    </div>
+                    <div class="bar-grey">
+                        <span class="percentage">0</span>
+                    </div>
+                    <div class="bar-grey">
+                        <span class="percentage">0</span>
+                    </div>
+                    <div class="bar-grey">
+                        <span class="percentage">0</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="chat">
+            <a class="fa-brands fa-twitch" href="#"></a>
+        </div>
+    </aside>
   </main>
-  <footer class="footer">
-
+  <footer>
+    <p>Dibuat dengan HTML5 oleh Tim Koding SMPN 213 Jakarta.</p>
   </footer>
-  <script>
-    
+  <script type="text/javascript">
+    function imageIndex(operator) {
+        const currentActivate = document.querySelector('header .news-images .news-image[value="1"]');
+        if (!currentActivate) return;
+
+        let nextActive
+
+        if(operator === Operator.ADD) {
+            nextActive = currentActivate.nextElementSibling
+
+            if(currentActivate.nextElementSibling === null) {
+                nextActive = currentActivate.parentElement.firstElementChild
+            }
+        }else if (operator === Operator.SUB) {
+            nextActive = currentActivate.previousElementSibling
+
+            if(currentActivate.previousElementSibling === null) {
+                nextActive = currentActivate.parentElement.lastElementChild
+            }
+        }
+
+        currentActivate.setAttribute("value", "0")
+        nextActive.setAttribute("value", "1")
+    }
   </script>
 </body>
 </html>
